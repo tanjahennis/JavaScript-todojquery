@@ -15,4 +15,5 @@ function toggleDone() {
   $(checkbox).parent().toggleClass("completed");
 
   updateCounters();
+  $("input[type=checkbox]").bind('change', toggleDone);
 }
