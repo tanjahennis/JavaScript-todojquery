@@ -74,22 +74,23 @@
       text-decoration: underline;
     }
   </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
   <div class="container">
     <h1>TodoList</h1>
 
-    <form>
+    <form onSubmit="submitTodo(); return false">
       <input type="text" id="new-todo" placeholder="What needs to be done?">
     </form>
 
     <ul id="todolist">
       <li class="todo">
-        <input id="todo-1" type="checkbox" value="1">
+        <input id="todo-1" type="checkbox" value="1" onChange="toggleDone.bind(this)();">
         <label for="todo-1">Sweep the floor</label>
       </li>
       <li class="todo completed">
-        <input id="todo-2" type="checkbox" value="1" checked="checked">
+        <input id="todo-2" type="checkbox" value="1" checked="checked" onChange="toggleDone.bind(this)();">
         <label for="todo-2">Dust the vases</label>
       </li>
     </ul>
@@ -97,11 +98,10 @@
       Todo: <span id="todo-count">1</span> •
       Done: <span id="completed-count">0</span> •
       Total: <span id="total-count">1</span>
+      <a href="#" onClick="cleanUpDoneTodos(); return false">Clean up</a>
     </div>
   </div>
 
-  <script>
-    // JavaScript here...
-  </script>
+  <script src="appjq.js"></script>
 </body>
 </html>
